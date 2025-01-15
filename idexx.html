@@ -1,772 +1,463 @@
-@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
-:root
-{
-    --bg-black-900:#f2f2fc;
-    --bg-black-100:#fdf9ff;
-    --bg-black-50:#e8dfec;
-    --text-black-900:#302e4d;
-    --text-black-700:#504e70;
-}
-body
-{
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    font-size: 16px;
-    font-family: 'Poppins' sans-serif;
-}
-*
-{
-    margin: 0;
-    padding: 0;
-    outline: none;
-    text-decoration: none;
-    box-sizing: border-box;
-}
-::before,::after
-{
-    box-sizing: border-box;
-}
-ul
-{
-    list-style: none;
-}
-.section
-{
-    background: var(--bg-black-900) ;
-    min-height: 100vh;
-    display: block;
-    padding: 0 30px;
-    opacity: 1;
-}
-.hidden
-{
-    display: none !important;
-}
-.main-content
-{
-    padding-left: 270px;
-}
-.padd-15
-{
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.container
-{
-    max-width: 1100px;
-    width: 100%;
-    margin: auto;
-}
-.section .container
-{
-    padding-top: 60px;
-    padding-bottom: 70px;
-}
-.section-title
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 60px;
-}
-.section-title h2
-{
-    font-size: 40px;
-    color: var(--text-black-900);
-    font-weight: 700;
-    position:relative;
-}
-.section-title h2::before
-{
-    content: '';
-    height: 4px;
-    width: 50px;
-    background-color: var(--skin-color);
-    position: absolute;
-    top: 100%;
-    left: 0;
-}
-.section-title h2::after
-{
-    content: '';
-    height: 4px;
-    width: 25px;
-    background-color: var(--skin-color);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 8px;
-}
-.row
-{
-    display:flex;
-    flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
-    position:relative;
-}
-.btn
-{
-    font-size: 16px;
-    font-weight: 500;
-    padding: 12px 35px;
-    color:white;
-    border-radius: 40px;
-    display: inline-block;
-    white-space: nowrap;
-    border: none;
-    background: var(--skin-color);
-    transition: all 0.3s ease;
-}
-.btn:hover
-{
-    transform: scale(1.05);
-}
-.shadow-dark
-{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
-.aside
-{
-    width: 270px;
-    background: var(--bg-black-100);
-    position:fixed;
-    left:0;
-    top: 0;
-    padding: 30px;
-    height: 100%;
-    border-right: 1px solid var(--bg-black-50);
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-.aside, .logo
-{
-    position: absolute;
-    top: 50px;
-    font-size: 30px;
-    text-transform: capitalize;
-}
-.aside .logo a
-{
-    color: var(--text-black-900);
-    font-weight: 700;
-    padding: 15px 20px;
-    font-size: 30px;
-    letter-spacing: 5px;
-    position: relative;
-}
-.aside .logo a span
-{
-    font-family: 'Clicker Script', cursive;
-    font-size: 40px;
-}
-.aside .logo a::before
-{
-    content: '' ;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-bottom: 5px solid var(--skin-color);
-    border-left: 5px solid var(--skin-color);
-    bottom: 0;
-    left: 0;
-}
-.aside .logo a::after
-{
-    content: '' ;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-top: 5px solid var(--skin-color);
-    border-right: 5px solid var(--skin-color);
-    top: 0;
-    right: 0;
-}
-.aside .nav-toggler
-{
-    height: 40px;
-    width: 45px;
-    border: 1px solid var(--bg-black-50);
-    cursor: pointer;
-    position: fixed;
-    left: 300px;
-    top: 20px;
-    border-radius: 5px;
-    background: var(--bg-black-100);
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-.aside .nav-toggler span
-{
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
-    display: inline-block;
-    position: relative;
-}
-.aside .nav-toggler span::before
-{
-    content:'';
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
-    position:absolute;
-    top: -6px;
-    left: 0;
-}
-.aside .nav-toggler span::after
-{
-    content:'';
-    height: 2px;
-    width: 18px;
-    background: var(--skin-color);
-    position:absolute;
-    top: 6px;
-    left: 0;
-}
-.aside .nav
-{
-    margin-top: 50px;
-}
-.aside .nav li
-{
-    margin-bottom: 20px;
-    display: block;
-}
-.aside .nav li a
-{
-    font-size: 16px;
-    font-weight: 600;
-    display: block;
-    border-bottom: 1px solid var(--bg-black-50);
-    color: var(--text-black-900);
-    padding: 5px 15px;
-}
-.aside .nav li a.active
-{
-    color:var(--skin-color);
-}
-.aside .nav li a i 
-{
-    margin-right: 15px;
-}
-.home
-{
-    min-height: 100vh;
-    display: flex;
-    color: var(--text-black-900);
-}
-.home .home-info
-{
-    flex: 0 0 60%;
-    max-width: 60%;
-}
-h3.hello
-{
-    font-size: 28px;
-    margin: 15px 0;
-}
-h3.hello span
-{
-    font-family: 'Clicker Script' , cursive;
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--skin-color);
-}
-h3.my-profession
-{
-    font-size: 30px;
-    margin: 15px 0;
-}
-.typing
-{
-    color: var(--skin-color);
-}
-.home-info p
-{
-    margin-bottom: 70px;
-    font-size: 20px;
-    color: var(--text-black-700);
-}
-.home .home-img
-{
-    flex: 0 0 40%;
-    max-width: 40%;
-    text-align: center;
-    position: relative;
-}
-.home-img::after
-{
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-bottom: 10px solid var(--skin-color);
-    border-right: 10px solid var(--skin-color);
-    right: 20px;
-    bottom: -40px;
-}
-.home-img::before
-{
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-top: 10px solid var(--skin-color);
-    border-left: 10px solid var(--skin-color);
-    left: -20px;
-    top: -40px;
-}
-.home .home-img img
-{
-    margin: auto;
-    border-radius: 5px;
-    height: 400px;
-}
-.about .about-content
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-.about .about-content .about-text
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-.about .about-content .about-text h3
-{
-    font-size: 24px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    color: var(--text-black-900);
-}
-.about .about-content .about-text h3 span
-{
-    color: var(--skin-color);
-}
-.about .about-content .about-text p
-{
-    font-size: 16px;
-    line-height: 25px;
-    color: var(--text-black-700);
-}
-.about .about-content .personal-info
-{
-    flex: 0 0 60%;
-    max-width: 60%; 
-    margin-top: 40px;
-}
-.about .about-content .personal-info .info-item
-{
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-.about .about-content .personal-info .info-item p
-{
-    font-weight: 600;
-    padding: 10px 0;
-    font-size: 16px;
-    color: var(--text-black-900);
-    border-bottom: 1px solid var(--bg-black-50);
-}
-.about .about-content .personal-info .info-item p span
-{
-    font-weight: 400;
-    color: var(--text-black-700);
-    margin-left: 4px;
-    display: inline-block;
-}
-.about .about-content .personal-info .buttons
-{
-    margin-top: 30px;
-}
-.about .about-content .personal-info .buttons .btn
-{
-    margin-right: 15px;
-    margin-top: 10px; 
-}
-.about .about-content .skills
-{
-    flex: 0 0 40%;
-    max-width: 40%;
-    margin-top: 40px;
-}
-.about .about-content .skills .skill-item
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-.about .about-content .skills .skill-item h5
-{
-    line-height: 40px;
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--text-black-900);
-    text-transform: capitalize;
-}
-.about .about-content .skills .skill-item .progress
-{
-    background-color: var(--bg-black-50);
-    height: 7px;
-    border-radius: 4px;
-    width: 100%;
-    position: relative;
-}
-.about .about-content .skills .skill-item
-{
-    margin-bottom: 25px;
-}
-.about .about-content .skills .skill-item .progress .progress-in
-{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    border-radius: 4px;
-    background-color: var(--skin-color);
-}
-.about .about-content .skills .skill-item .skill-percent
-{
-    position: absolute;
-    right: 0;
-    color: var(--text-black-900);
-    top: -40px;
-    font-weight: 400;
-    line-height: 40px;
-}
-.about .about-content .education,
-.about .about-content .experience
-{
-    flex: 0 0 50%;
-    max-width: 50%;
-    margin-top: 30px;
-}
-.about .about-content h3.title 
-{
-    font-size: 24px;
-    margin-bottom: 30px;
-    font-weight: 700;
-    color: var(--text-black-900);
-}
-.about .about-content .timeline-box 
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-.about .about-content .timeline
-{
-    background-color: var(--bg-black-100);
-    padding: 30px 15px;
-    border: 1px solid var(--bg-black-50);
-    border-radius: 10px;
-    width: 100%;
-    position: relative;
-}
-.about .about-content .timeline .timeline-item
-{
-    position: relative;
-    padding-left: 37px;
-    padding-bottom: 50px;
-}
-.about .about-content .timeline .timeline-item:last-child
-{
-    padding-bottom: 0;
-}
-.about .about-content .timeline .timeline-item::before
-{
-    content: '';
-    width: 1px;
-    position: absolute;
-    height: 100%;
-    left: 7px;
-    top: 0;
-    background-color: var(--skin-color);
-}
-.about .about-content .timeline .circle-dot
-{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background-color: var(--skin-color);
-}
-.about .about-content .timeline .timeline-date
-{
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 12px;
-    color: var(--text-black-700);
-}
-.about .about-content .timeline .timeline-date .fa
-{
-    margin-right: 5px;
-}
-.about .about-content .timeline .timeline-title
-{
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 15px;
-    text-transform: capitalize;
-    color: var(--text-black-900);
-}
-.about .about-content .timeline .timeline-text
-{
-    line-height: 25px;
-    font-size: 16px;
-    text-align: justify;
-    color: var(--text-black-700);
-}
-/*service*/
-.service .container
-{
-    padding-bottom: 30px;
-}
-.service .service-item
-{
-    margin-bottom: 30px;
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-}
-.service .service-item .service-item-inner
-{
-    background-color: var(--bg-black-100);
-    border: 1px solid var(--bg-black-50);
-    border-radius: 10px;
-    padding: 30px 15px;
-    text-align: center;
-    transition: all 0.3S ease;
-}
-.service .service-item .service-item-inner:hover
-{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
-.service .service-item .service-item-inner .icon 
-{
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-.service .service-item .service-item-inner .icon .fa
-{
-    font-size: 40px;
-    line-height: 60px;
-    color:var(--skin-color);
-    transition: all 0.3s ease;
-}
-.service .service-item .service-item-inner:hover .icon
-{
-    background: var(--skin-color);
-}
-.service .service-item .service-item-inner:hover .icon .fa
-{
-    font-size: 25px;
-    color: #ffffff;
-}
-.service .service-item .service-item-inner h4
-{
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: var(--text-black-900);
-    font-weight: 700;
-    text-transform: capitalize;
-}
-.service .service-item .service-item-inner p
-{
-    font-size: 16px;
-    color: var(--text-black-700);
-    line-height: 25px;
-}
-/*portfolio*/
-.portfolio .container
-{
-    padding-bottom: 40px;
-}
-.portfolio .portfolio-heading
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 40px;
-}
-.portfolio .portfolio-heading h2
-{
-    color: var(--text-black-900);
-    font-weight: 500;
-}
-.portfolio .portfolio-item
-{
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-    margin-bottom: 30px;
-}
-.portfolio .portfolio-item-inner
-{
-    border: 6px solid var(--bg-black-100);
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-}
-.portfolio .portfolio-item-inner .portfolio-img img
-{
-    width: 100%;
-    display: block;
-}
-/*contact*/
-.contact-title
-{
-    color: var(--skin-color);
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-.contact-sub-title
-{
-    color: var(--text-black-900);
-    text-align: center;
-    font-size: 15px;
-    margin-bottom: 60px;
-}
-.contact .contact-info-item
-{
-    flex: 0 0 25%;
-    max-width: 25%;
-    text-align: center;
-    margin-bottom: 60px;
-}
-.contact .contact-info-item .icon
-{
-    display: inline-block;
-}
-.contact .contact-info-item .icon .fa
-{
-    font-size: 25px;
-    color: var(--skin-color);
-}
-.contact .contact-info-item h4
-{
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text-black-900);
-    text-transform: capitalize;
-    margin: 15px 0 5px;
-}
-.contact .contact-info-item p
-{
-    font-size: 16px;
-    line-height: 25px;
-    color: var(--text-black-700);
-    font-weight: 400;
-}
-.contact .contact-form
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-.contact .contact-form .col-6
-{
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-.contact .contact-form .col-12
-{
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-.contact .contact-form .form-item
-{
-    margin-bottom: 30px;
-}
-.contact .contact-form .form-item .form-control
-{
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    background: var(--bg-black-100);
-    border: 1px solid var(--bg-black-50);
-    padding: 10px 25px;
-    font-size: 16px;
-    color: var(--text-black-700);
-    transition: all 0.3s ease;
-}
-.contact .contact-form .form-item .form-control:focus
-{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
-.contact .contact-form .form-item textarea.form-control
-{
-    height: 140px; 
-}
-.contact .contact-form .btn
-{
-    height: 50px;
-    padding: 0 50px;
-}
-@media (max-width:1199px)
-{
-    .aside
-    {
-        left: -270px;
-    }
-    .main-content
-    {
-        padding-left: 0;
-    }
-    .about .about-content .personal-info .info-item p span 
-    {
-        display: block;
-        margin-left: 0;
-    }
-}
-@media (max-width:991px)
-{
-    .contact .contact-info-item,    
-    .portfolio .portfolio-item,
-    .service .service-item
-    {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    .home .home-info
-    {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    .home .home-img
-    {
-        display: none;
-    }
-}
-@media (max-width:767px)
-{
-    .contact .contact-form .col-6,
-    .contact .contact-info-item,
-    .portfolio .portfolio-item,
-    .service .service-item,
-    .about .about-content .experience,
-    .about .about-content .education,
-    .about .about-content .skills,
-    .about .about-content .personal-info
-    {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-html {
-    scroll-behavior: smooth;
-}
-ul.nav li a { 
-    color: #000; 
-    text-decoration: none;
-  }
-  ul.nav li a:active {
-    color: #FF0090; 
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofoli im</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="color-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <!-- ==== Main container start -->
+    <div class="main-container">
+      <div class="aside">
+        <div class="logo">
+            <a href="#"><span>R</span>ebeka</a>
+        </div>
+        <div class="nav-toggler">
+            <span></span>
+        </div>
+        <ul class="nav">
+          <li><a href="#home"><i class="fas fa-home"></i> Biografia</a></li>
+          <li><a href="#info"><i class="fa fa-user"></i> Informacione+</a></li>
+          <li><a href="#services"><i class="fa fa-list"></i> Sherbime</a></li>
+          <li><a href="#portfolio"><i class="fa fa-briefcase"></i> Portofoli</a></li>
+          <li><a href="#contact"><i class="fa fa-comments"></i> Kontakt</a></li>
+      </ul>
+      </div>  
+      <div class="main-content">
+
+        <section class="home section">
+           <div class="container">
+            <div class="row">
+             <div class="home-info padd-15">
+               <h3 class="hello">Pershendetje, une quhem <span class="name">Rebeka Cekini</span></h3>   
+               <h3 class="my-profession">Une jam <span class="typing">studente ne shkenca kompjuterike</span></h3>
+               <p>Studioj ne Beder per Shkencat Kompjuterike, e pasionuar pas programimit dhe teknologjise. Kam njohuri ne gjuhe programimi
+                 te ndryshme. Kam një dëshirë të fortë për të kontribuar në fusha të ndryshme të teknologjisë dhe për të ndihmuar
+                 në krijimin e produkteve që ndikojnë pozitivisht në shoqëri...</p>
+               <a href="#contact" class="btn hire-me">Me kontakto</a>
+             </div>
+             <div class="home-img padd-15">
+                <img src="images/myphoto.jpg" alt="">
+             </div>
+            </div>
+           </div> 
+        </section>
+       <section class="about section" id="home">
+        <div class="container">
+          <div class="row">
+           <div class="section-title padd-15">
+            <h2>Per mua</h2>
+           </div> 
+          </div> 
+          <div class="row">
+            <div class="about-content padd-15">
+               <div class="row">
+                <div class="about-text padd-15">
+                   <h3>Une jam Rebeka Cekini nje <span>studente ne vitit e dyte.</span></h3> 
+                   <p>
+                    Jam studente në Shkencat Kompjuterike, e pasionuar pas teknologjisë dhe zhvillimit të softuerëve. Kam njohuri të thella në gjuhë programimi si Python, Java dhe C++, dhe kam eksperiencë në krijimin e aplikacioneve dhe analizën e të dhënave. Më pëlqen të zgjidh probleme komplekse dhe të punoj me teknologji të reja. Gjatë studimeve, kam zhvilluar aftësi në punën në grup dhe menaxhimin e projekteve. Jam e motivuar për të vazhduar të mësoj dhe të kontribuoj në industrinë e teknologjisë.
+                   </p>
+                </div>
+               </div>
+              <div class="row">
+                <div class="personal-info padd-15">
+                  <div class="row">
+                    <div class="info-item padd-15">
+                      <p>Datelindja: <span>07/11/2005</span></p>  
+                    </div>
+                    <div class="info-item padd-15">
+                        <p>Mosha: <span>19</span></p>  
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>Website: <span>www.domain.com</span></p>  
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>Email: <span>rcekini23@beder.edu.al</span></p>  
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>Dega e studimit: <span>Shkenca kompjuterike</span></p>  
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>Nr tel: <span>+355 69 5744896</span></p>  
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>Qyteti: <span>Tirane</span></p>  
+                      </div>
+                      <div class="info-item padd-15">
+                        <p>Freelance: <span>E gatshme</span></p>  
+                      </div>
+                   <div class="row">
+                      <div class="buttons padd-15">
+                        <a href="CVRebeka.Çekini.docx" download="CV_Rebeka" class="btn">Shkarko CV</a>
+                        <a href="#contact" class="btn hire-me">Me kontakto</a>
+                      </div>
+                   </div>   
+                  </div>  
+                </div>
+                <div class="skills padd-15">
+                  <div class="row">
+                    <div class="skill-item padd-15">
+                       <h5>JS</h5> 
+                       <div class="progress">
+                        <div class="progress-in" style="width: 86%;"></div>
+                        <div class="skill-percent">86%</div>
+                       </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                        <h5>C++</h5> 
+                        <div class="progress">
+                         <div class="progress-in" style="width: 66%;"></div>
+                         <div class="skill-percent">66%</div>
+                        </div>
+                     </div>
+                     <div class="skill-item padd-15">
+                        <h5>HTML</h5> 
+                        <div class="progress">
+                         <div class="progress-in" style="width: 96%;"></div>
+                         <div class="skill-percent">96%</div>
+                        </div>
+                     </div>
+                     <div class="skill-item padd-15">
+                        <h5>C#</h5> 
+                        <div class="progress">
+                         <div class="progress-in" style="width: 46%;"></div>
+                         <div class="skill-percent">46%</div>
+                        </div>
+                     </div>
+                  </div>  
+                </div>
+              </div>  
+              <div class="row">
+                <div class="education padd-15" id="info">
+                  <h3 class="title">Edukimi</h3>  
+                  <div class="row">
+                    <div class="timeline-box padd-15">
+                       <div class="timeline shadow-dark">
+                        <!--======= timeline item =======-->
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i>  2020-2021 
+                            </h3>
+                            <h4 class="timeline-title">Kurs intensiv</h4>
+                            <p class="timeline-text">Per 1 vit kam ndjekur një kurs intensiv ne Elbasan për disa gjuhë programimi, 
+                                ku kam fituar aftësi dhe njohuri të thella në zhvillimin e softuerëve dhe aplikacioneve, duke përfshirë gjuhë 
+                                të tilla si Python, JavaScript, dhe HTML/CSS. Ky kurs ka qenë një hap i rëndësishëm në forcimin e aftësive të 
+                                mia teknike dhe ka kontribuar në zhvillimin e karrierës time profesionale në fushën e teknologjisë.</p>
+                        </div>
+                          <!--======= timeline item =======-->
+                          <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i>  2020-2023 
+                            </h3>
+                            <h4 class="timeline-title">Njohuri te metejshme</h4>
+                            <p class="timeline-text">Në periudhën 2020-2023, përveç kursit intensiv për programim që ndoqa në vitin
+                                 e parë, kam fituar shumë njohuri dhe aftësi të vlefshme për teknologjinë dhe informatikën gjatë 
+                                 kohës në gjimnaz. Ky përkushtim në fushën e IT-së më ndihmoi të zhvilloj një bazë të fortë teknike
+                                  dhe të thelloj njohuritë për teknologjitë më të fundit në industri.</p>
+                        </div>
+                          <!--======= timeline item =======-->
+                          <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-date">
+                            <i class="fa fa-calendar"></i>  2023-2024 
+                            </h3>
+                            <h4 class="timeline-title">Vazhdim bachelor</h4>
+                            <p class="timeline-text">Në vitet 2023-2024, kam vazhduar studimet e mia për Bachelor në Shkenca Kompjuterike,
+                                 dhe aktualisht jam në vitin e dytë. Gjatë kësaj periudhe, kam thelluar njohuritë e mia në fushën e 
+                                 teknologjisë dhe kam zhvilluar aftësi praktike që do të më ndihmojnë në karrierën time profesionale.</p>
+                        </div>
+                       </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="experience padd-15">
+                    <h3 class="title">Eksperience</h3>  
+                    <div class="row">
+                        <div class="timeline-box padd-15">
+                           <div class="timeline shadow-dark">
+                            <!--======= timeline item =======-->
+                            <div class="timeline-item">
+                                <div class="circle-dot"></div>
+                                <h3 class="timeline-date">
+                                <i class="fa fa-calendar"></i>  2020-2021 
+                                </h3>
+                                <h4 class="timeline-title">Kurs intensiv</h4>
+                                <p class="timeline-text">Per 1 vit kam ndjekur një kurs intensiv ne Elbasan për disa gjuhë programimi, 
+                                    ku kam fituar aftësi dhe njohuri të thella në zhvillimin e softuerëve dhe aplikacioneve, duke përfshirë gjuhë 
+                                    të tilla si Python, JavaScript, dhe HTML/CSS. Ky kurs ka qenë një hap i rëndësishëm në forcimin e aftësive të 
+                                    mia teknike dhe ka kontribuar në zhvillimin e karrierës time profesionale në fushën e teknologjisë.</p>
+                            </div>
+                              <!--======= timeline item =======-->
+                              <div class="timeline-item">
+                                <div class="circle-dot"></div>
+                                <h3 class="timeline-date">
+                                <i class="fa fa-calendar"></i>  2020-2023 
+                                </h3>
+                                <h4 class="timeline-title">Njohuri te metejshme</h4>
+                                <p class="timeline-text">Në periudhën 2020-2023, përveç kursit intensiv për programim që ndoqa në vitin
+                                     e parë, kam fituar shumë njohuri dhe aftësi të vlefshme për teknologjinë dhe informatikën gjatë 
+                                     kohës në gjimnaz. Ky përkushtim në fushën e IT-së më ndihmoi të zhvilloj një bazë të fortë teknike
+                                      dhe të thelloj njohuritë për teknologjitë më të fundit në industri.</p>
+                            </div>
+                              <!--======= timeline item =======-->
+                              <div class="timeline-item">
+                                <div class="circle-dot"></div>
+                                <h3 class="timeline-date">
+                                <i class="fa fa-calendar"></i>  2023-2024 
+                                </h3>
+                                <h4 class="timeline-title">Vazhdim bachelor</h4>
+                                <p class="timeline-text">Në vitet 2023-2024, kam vazhduar studimet e mia për Bachelor në Shkenca Kompjuterike,
+                                     dhe aktualisht jam në vitin e dytë. Gjatë kësaj periudhe, kam thelluar njohuritë e mia në fushën e 
+                                     teknologjisë dhe kam zhvilluar aftësi praktike që do të më ndihmojnë në karrierën time profesionale.</p>
+                            </div>
+                           </div> 
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section> 
+       <!--About section end-->
+       <!--Services section start-->
+       <section class="service section" id="services">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+                <h2>Sherbimet</h2>
+            </div>
+          </div>
+        <div class="row">
+          <!--service item start-->
+          <div class="service-item padd-15">
+            <div class="service-item-inner">
+               <div class="icon">
+                <i class="fa fa-mobile-alt"></i>
+               </div>
+               <h4>Zhvillim Softuerësh dhe Aplikacionesh</h4>
+               <p>Krijimi i aplikacioneve web dhe mobile sipas nevojave tuaja</p>
+            </div>
+          </div>
+          <!--service item end-->  
+          <!--service item start-->
+          <div class="service-item padd-15">
+            <div class="service-item-inner">
+               <div class="icon">
+                <i class="fa fa-laptop-code"></i>
+               </div>
+               <h4>Siguria Kibernetike</h4>
+               <p>Testime dhe auditime të sigurisë për mbrojtjen e sistemeve tuaja</p>
+            </div>
+          </div>
+          <!--service item end--> 
+          <!--service item start-->
+          <div class="service-item padd-15">
+            <div class="service-item-inner">
+               <div class="icon">
+                <i class="fa fa-palette"></i>
+               </div>
+               <h4>Inteligjencë Artificiale</h4>
+               <p>Zhvillimi i modeleve dhe sistemeve të AI/ML për analizën e të dhënave</p>
+            </div>
+          </div>
+          <!--service item end-->   
+          <!--service item start-->
+          <div class="service-item padd-15">
+            <div class="service-item-inner">
+               <div class="icon">
+                <i class="fa fa-code"></i>
+               </div>
+               <h4>Zhvillim në Cloud</h4>
+               <p>Migrimi dhe zhvillimi i aplikacioneve në platformat cloud (AWS, Azure, etj.)</p>
+            </div>
+          </div>
+          <!--service item end--> 
+          <!--service item start-->
+          <div class="service-item padd-15">
+            <div class="service-item-inner">
+               <div class="icon">
+                <i class="fa fa-search"></i>
+               </div>
+               <h4>Trajnime dhe Kurse</h4>
+               <p>Trajnime profesionale në programim dhe teknologji të ndryshme</p>
+            </div>
+          </div>
+          <!--service item end-->   
+          <!--service item start-->
+          <div class="service-item padd-15">
+            <div class="service-item-inner">
+               <div class="icon">
+                <i class="fa fa-bullhorn"></i>
+               </div>
+               <h4>Konsulencë për Arkitekturë IT</h4>
+               <p>Dizajnimi dhe administrimi i infrastrukturës dhe sistemeve të IT.</p>
+            </div>
+          </div>
+          <!--service item end-->  
+        </div>    
+        </div>
+       </section>
+       <!--Services section end-->
+       <!--Portfolio section start-->
+       <section class="portfolio section" id="portfolio">
+         <div class="container">
+            <div class="row">
+                <div class="section-title padd-15">
+                    <h2>Portofoli</h2>
+                </div>
+              </div>
+           <div class="row">
+             <div class="portfolio-heading padd-15">
+               <h2>Projekti im i fundit: </h2> 
+             </div>
+           </div>
+           <div class="row">
+             <!--portfolio item start-->
+             <div class="portfolio-item padd-15">
+               <div class="portfolio-item-inner shadow-dark">
+                  <div class="portfolio-img">
+                    <img src="images/imazhi1.jpg" alt=""> 
+                  </div>
+               </div> 
+             </div>
+             <!--portfolio item end-->
+             <!--portfolio item start-->
+             <div class="portfolio-item padd-15">
+                <div class="portfolio-item-inner shadow-dark">
+                   <div class="portfolio-img">
+                     <img src="images/imazhi2.jpg" alt=""> 
+                   </div>
+                </div> 
+              </div>
+              <!--portfolio item end-->
+              <!--portfolio item start-->
+             <div class="portfolio-item padd-15">
+                <div class="portfolio-item-inner shadow-dark">
+                   <div class="portfolio-img">
+                     <img src="images/imazhi3.jpg" alt=""> 
+                   </div>
+                </div> 
+              </div>
+              <!--portfolio item end-->
+              <!--portfolio item start-->
+             <div class="portfolio-item padd-15">
+                <div class="portfolio-item-inner shadow-dark">
+                   <div class="portfolio-img">
+                     <img src="images/imazhi4.jpg" alt=""> 
+                   </div>
+                </div> 
+              </div>
+              <!--portfolio item end-->
+              <!--portfolio item start-->
+             <div class="portfolio-item padd-15">
+                <div class="portfolio-item-inner shadow-dark">
+                   <div class="portfolio-img">
+                     <img src="images/imazhi5.jpg" alt=""> 
+                   </div>
+                </div> 
+              </div>
+              <!--portfolio item end-->
+              <!--portfolio item start-->
+             <div class="portfolio-item padd-15">
+                <div class="portfolio-item-inner shadow-dark">
+                   <div class="portfolio-img">
+                     <img src="images/imazhi6.jpg" alt=""> 
+                   </div>
+                </div> 
+              </div>
+              <!--portfolio item end-->
+           </div> 
+         </div>
+       </section>
+       <!--Portfolio section end-->
+       <!--contact section start-->
+       <section class="contact section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="section-title padd-15">
+                    <h2>Me kontakto</h2>
+                </div>
+              </div>
+              <h3 class="contact-title padd-15">Keni ndonje pyetje?</h3>
+              <h4 class="contact-sub-title padd-15">JAM NE SHERBIMIN TUAJ.</h4>
+              <div class="row">
+              <!--Contact info item start-->
+              <div class="contact-info-item padd-15">
+                <div class="icon"><i class="fa fa-phone"></i></div>
+                <h4>Me telefono ne:</h4>
+                <p>+355 69 5744896</p>
+              </div>
+              <!--Contact info item end-->
+              <!--Contact info item start-->
+              <div class="contact-info-item padd-15">
+                <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                <h4>Zyra</h4>
+                <p>Tirane</p>
+              </div>
+              <!--Contact info item end-->
+              <!--Contact info item start-->
+              <div class="contact-info-item padd-15">
+                <div class="icon"><i class="fa fa-envelope"></i></div>
+                <h4>Email</h4>
+                <p>rcekini23@beder.edu.al</p>
+              </div>
+              <!--Contact info item end-->
+              <!--Contact info item start-->
+              <div class="contact-info-item padd-15">
+                <div class="icon"><i class="fa fa-globe-europe"></i></div>
+                <h4>Website</h4>
+                <p>www.domain.com</p>
+              </div>
+              <!--Contact info item end-->
+              </div>
+              <h3 class="contact-title padd-15">Keni mundesine te me dergoni email</h3>
+              <h4 class="contact-sub-title padd-15">DO TE MERRNI NJE PERGJIGJJE TE SHPEJTE.</h4>
+              <!--Contact form-->
+              <div class="row">
+                <div class="contact-form padd-15">
+                   <div class="row">
+                    <div class="form-item col-6 padd-15">
+                        <div class="form-group">
+                           <input type="text" class="form-control" placeholder="Emri" > 
+                        </div>
+                    </div>
+                    <div class="form-item col-6 padd-15">
+                        <div class="form-group">
+                           <input type="email" class="form-control" placeholder="Email" > 
+                        </div>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="form-item col-12 padd-15">
+                        <div class="form-group">
+                           <input type="text" class="form-control" placeholder="Lenda"> 
+                        </div>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="form-item col-12 padd-15">
+                        <div class="form-group">
+                           <textarea name="" class="form-control" id="" placeholder="Mesazh"></textarea> 
+                        </div>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="form-item col-12 padd-15">
+                        <button type="submit" class="btn">Dergo nje mesazh</button>
+                    </div>
+                   </div>
+                </div>
+              </div>
+        </div> 
+       </section>
+      </div> 
+    </div>
+</body>
+</html>
   
